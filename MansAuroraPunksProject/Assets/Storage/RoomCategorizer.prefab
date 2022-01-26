@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4911528138146677705
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4911528138146677719}
+  - component: {fileID: 4911528138146677718}
+  m_Layer: 0
+  m_Name: RoomCategorizer
+  m_TagString: Rooms
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4911528138146677719
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4911528138146677705}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -82, y: -221.89673, z: -350}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4911528138146677718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4911528138146677705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fb91298edd7483499870f9e23d7e4f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  XplusRooms:
+  - {fileID: 7852078995892626577, guid: 8be2faaead5a12e4c868204f78d57676, type: 3}
+  - {fileID: 3802275373433350344, guid: 4f105d4bf8d87884da79ab37498ea5ce, type: 3}
+  - {fileID: 7867865631315275800, guid: 2344d7df46d843643b360bde4e985e60, type: 3}
+  - {fileID: 6202302840455525670, guid: 5dbb7803a3eaff841a12fa48bcdfa88d, type: 3}
+  XminusRooms:
+  - {fileID: 3802275373433350344, guid: 4f105d4bf8d87884da79ab37498ea5ce, type: 3}
+  - {fileID: 8603824721257193343, guid: c0c42d4413a851e4fb81c09b6abbde2d, type: 3}
+  - {fileID: 2684484543866731626, guid: 828a110642e395a40b720c7fddc32803, type: 3}
+  ZplusRooms:
+  - {fileID: 7852078995892626577, guid: 8be2faaead5a12e4c868204f78d57676, type: 3}
+  - {fileID: 3125252732844513600, guid: 224eb6a64195c9c4aa684a5025d81b9f, type: 3}
+  - {fileID: 382210971293526607, guid: 30a970c7fccae3049bf87a8cb76b0494, type: 3}
+  - {fileID: 2210409640594670256, guid: 05dd528858eceab40a779ac99ff5d7d0, type: 3}
+  ZminusRooms:
+  - {fileID: 382210971293526607, guid: 30a970c7fccae3049bf87a8cb76b0494, type: 3}
+  - {fileID: 8603824721257193343, guid: c0c42d4413a851e4fb81c09b6abbde2d, type: 3}
+  - {fileID: 7236452994513167185, guid: 20138b2bffc686d4493aed3be30ab585, type: 3}
+  block: {fileID: 499487796707796234, guid: 5c5544dd96ca37e479ccaeea21e8a6c3, type: 3}

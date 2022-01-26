@@ -117,6 +117,7 @@ MonoBehaviour:
   Damage: 40
   AreaOfDamage: {fileID: 1203337828444365110}
   RadiusColor: {r: 0, g: 1, b: 1, a: 0.49803922}
+  player: {fileID: 0}
 --- !u!114 &1203337828444365110
 MonoBehaviour:
   m_ObjectHideFlags: 0

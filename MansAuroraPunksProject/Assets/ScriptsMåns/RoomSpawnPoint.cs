@@ -47,7 +47,7 @@ public class RoomSpawnPoint : MonoBehaviour
                     case 1:
                         {
 
-                            seed = Random.Range(1, roomCategorizer.XminusRooms.Length);
+                            seed = Random.Range(0, roomCategorizer.XminusRooms.Length);
                             completeSeed[variables.counter] = seed;
                             Instantiate(roomCategorizer.XminusRooms[seed], transform.position, roomCategorizer.XminusRooms[seed].transform.rotation);
                             active = false;
@@ -58,7 +58,7 @@ public class RoomSpawnPoint : MonoBehaviour
                     case 2:
                         {
 
-                            seed = Random.Range(1, roomCategorizer.ZminusRooms.Length);
+                            seed = Random.Range(0, roomCategorizer.ZminusRooms.Length);
                             completeSeed[variables.counter] = seed;
                             Instantiate(roomCategorizer.ZminusRooms[seed], transform.position, roomCategorizer.ZminusRooms[seed].transform.rotation);
                             active = false;
@@ -69,7 +69,7 @@ public class RoomSpawnPoint : MonoBehaviour
                     case 3:
                         {
 
-                            seed = Random.Range(1, roomCategorizer.XplusRooms.Length);
+                            seed = Random.Range(0, roomCategorizer.XplusRooms.Length);
                             completeSeed[variables.counter] = seed;
                             Instantiate(roomCategorizer.XplusRooms[seed], transform.position, roomCategorizer.XplusRooms[seed].transform.rotation);
                             active = false;
@@ -80,7 +80,7 @@ public class RoomSpawnPoint : MonoBehaviour
                     case 4:
                         {
 
-                            seed = Random.Range(1, roomCategorizer.ZplusRooms.Length);
+                            seed = Random.Range(0, roomCategorizer.ZplusRooms.Length);
                             completeSeed[variables.counter] = seed;
                             Instantiate(roomCategorizer.ZplusRooms[seed], transform.position, roomCategorizer.ZplusRooms[seed].transform.rotation);
                             active = false;
@@ -99,18 +99,17 @@ public class RoomSpawnPoint : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("SpawnPoint"))
         {
             if (other.GetComponent<RoomSpawnPoint>().active == true && active == true)
             {
-                Instantiate(roomCategorizer.block, transform.position, Quaternion.identity);
+                Instantiate(roomCategorizer.block, transform.position, transform.rotation);
                 Destroy(gameObject);
-
             }
 
-            active = false;
+            
         }
     }
 

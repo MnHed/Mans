@@ -8,7 +8,7 @@ namespace Unity.FPS.Game
         public float DamageMultiplier = 1f;
 
         [Range(0, 1)] [Tooltip("Multiplier to apply to self damage")]
-        public float SensibilityToSelfdamage = 0.5f;
+        public float SensibilityToSelfdamage = 0.25f;
 
         public Health Health { get; private set; }
 

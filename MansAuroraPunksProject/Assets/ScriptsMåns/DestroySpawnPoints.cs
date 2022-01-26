@@ -7,11 +7,14 @@ public class DestroySpawnPoints : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "SpawnPoint")
+
+        if (other.CompareTag("SpawnPoint") || other.CompareTag("Rooms"))
         {
             Destroy(other.gameObject);
 
         }
+
+        
 
     }
 
