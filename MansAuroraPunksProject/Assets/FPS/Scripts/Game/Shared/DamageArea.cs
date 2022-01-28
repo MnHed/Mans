@@ -43,8 +43,7 @@ namespace Unity.FPS.Game
                 {
                     uniqueDamageable.InflictDamage(
                    (damage / 2) * DamageRatioOverDistance.Evaluate(distance / AreaOfEffectDistance), true, owner);
-
-
+                    uniqueDamageable.GetComponent<CharacterController>().Move(uniqueDamageable.transform.position);
 
                 }
                 else

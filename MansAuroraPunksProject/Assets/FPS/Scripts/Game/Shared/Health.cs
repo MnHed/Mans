@@ -13,6 +13,7 @@ namespace Unity.FPS.Game
         public UnityAction<float, GameObject> OnDamaged;
         public UnityAction<float> OnHealed;
         public UnityAction OnDie;
+        public GameObject damageText;
 
         public float CurrentHealth { get; set; }
         public bool Invincible { get; set; }
@@ -22,6 +23,22 @@ namespace Unity.FPS.Game
         public bool IsCritical() => GetRatio() <= CriticalHealthRatio;
 
         bool m_IsDead;
+
+        void ShowDamageText()
+        {
+            
+            if (damageText != null)
+            {
+
+                float offset = Random.Range(-200, 200);
+
+                //damageText.GetComponent<TextMesh>().text = damageToWrite.ToString();
+                Instantiate(damageText, new Vector3(transform.position.x + offset, transform.position.y + offset, transform.position.z + offset), Quaternion.identity, transform);
+
+            }
+
+
+        }
 
         void Start()
         {
@@ -57,7 +74,7 @@ namespace Unity.FPS.Game
             {
                 OnDamaged?.Invoke(trueDamageAmount, damageSource);
             }
-
+            ShowDamageText();
             HandleDeath();
         }
 

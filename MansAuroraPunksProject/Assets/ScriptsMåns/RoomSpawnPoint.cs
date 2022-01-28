@@ -38,6 +38,7 @@ public class RoomSpawnPoint : MonoBehaviour
 
         if (active == true)
         {
+            #region expandingLabyrinth
             if (variables.counter < totalNumberOfRooms)
             {
 
@@ -47,7 +48,7 @@ public class RoomSpawnPoint : MonoBehaviour
                     case 1:
                         {
 
-                            seed = Random.Range(0, roomCategorizer.XminusRooms.Length);
+                            seed = Random.Range(1, roomCategorizer.XminusRooms.Length);
                             completeSeed[variables.counter] = seed;
                             Instantiate(roomCategorizer.XminusRooms[seed], transform.position, roomCategorizer.XminusRooms[seed].transform.rotation);
                             active = false;
@@ -58,7 +59,7 @@ public class RoomSpawnPoint : MonoBehaviour
                     case 2:
                         {
 
-                            seed = Random.Range(0, roomCategorizer.ZminusRooms.Length);
+                            seed = Random.Range(1, roomCategorizer.ZminusRooms.Length);
                             completeSeed[variables.counter] = seed;
                             Instantiate(roomCategorizer.ZminusRooms[seed], transform.position, roomCategorizer.ZminusRooms[seed].transform.rotation);
                             active = false;
@@ -69,7 +70,7 @@ public class RoomSpawnPoint : MonoBehaviour
                     case 3:
                         {
 
-                            seed = Random.Range(0, roomCategorizer.XplusRooms.Length);
+                            seed = Random.Range(1, roomCategorizer.XplusRooms.Length);
                             completeSeed[variables.counter] = seed;
                             Instantiate(roomCategorizer.XplusRooms[seed], transform.position, roomCategorizer.XplusRooms[seed].transform.rotation);
                             active = false;
@@ -80,7 +81,7 @@ public class RoomSpawnPoint : MonoBehaviour
                     case 4:
                         {
 
-                            seed = Random.Range(0, roomCategorizer.ZplusRooms.Length);
+                            seed = Random.Range(1, roomCategorizer.ZplusRooms.Length);
                             completeSeed[variables.counter] = seed;
                             Instantiate(roomCategorizer.ZplusRooms[seed], transform.position, roomCategorizer.ZplusRooms[seed].transform.rotation);
                             active = false;
@@ -96,6 +97,69 @@ public class RoomSpawnPoint : MonoBehaviour
                         break;
                 }
             }
+            #endregion
+
+            #region endLabyrinth
+
+
+
+            if (variables.counter >= totalNumberOfRooms)
+            {
+
+                switch (connectToDirection)
+                {
+
+                    case 1:
+                        {
+
+                            seed = 0;
+                            Instantiate(roomCategorizer.XminusRooms[seed], transform.position, roomCategorizer.XminusRooms[seed].transform.rotation);
+                            active = false;
+                            variables.counter++;
+                            break;
+
+                        }
+                    case 2:
+                        {
+
+                            seed = 0;
+                            Instantiate(roomCategorizer.ZminusRooms[seed], transform.position, roomCategorizer.ZminusRooms[seed].transform.rotation);
+                            active = false;
+                            variables.counter++;
+                            break;
+
+                        }
+                    case 3:
+                        {
+
+                            seed = 0;
+                            Instantiate(roomCategorizer.XplusRooms[seed], transform.position, roomCategorizer.XplusRooms[seed].transform.rotation);
+                            active = false;
+                            variables.counter++;
+                            break;
+
+                        }
+                    case 4:
+                        {
+
+                            seed = 0;
+                            Instantiate(roomCategorizer.ZplusRooms[seed], transform.position, roomCategorizer.ZplusRooms[seed].transform.rotation);
+                            active = false;
+                            variables.counter++;
+
+                            break;
+
+                        }
+
+
+                    default:
+                        active = false;
+                        break;
+                }
+            }
+
+            Debug.Log(completeSeed);
+            #endregion
         }
     }
 
@@ -103,14 +167,10 @@ public class RoomSpawnPoint : MonoBehaviour
     {
         if (other.CompareTag("SpawnPoint"))
         {
-            if (other.GetComponent<RoomSpawnPoint>().active == true && active == true)
-            {
-                Instantiate(roomCategorizer.block, transform.position, transform.rotation);
-                Destroy(gameObject);
-            }
+                active = false;
 
-            
         }
     }
-
 }
+
+
